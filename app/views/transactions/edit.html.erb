@@ -1,0 +1,19 @@
+<!Doctype html>
+<head>
+  <% content_for :title, "Edit Transaction Details" %>
+</head>
+<body>
+  <br>
+  <h1>Edit Transaction Details</h1>
+  <hr>
+  <br>
+    <%=  bootstrap_form_for(@transaction, class: 'form-horizontal') do |f| %>
+      <%= f.hidden_field :sendingAccount_id %><br>
+      <%= f.text_field :transactionNumber, :readonly => false, label: "Transaction Number",  style: "margin:0" %><br>
+      <%= f.text_field :recievingAccount_id, label: "To" %><br>
+      <%= f.text_field :amount, label: "Amount", style: "margin:0" %><br>
+      <%= f.select :currency,["GBP", "USD", "EUR"], label: "Currency", style: "margin:0" %><br>
+      <%= f.text_field :description, label: "Description", style: "margin:0" %><br>
+      <%= f.submit "Save Changes", class: 'btn btn-lg btn-primary btn-block' %>
+    <% end %>
+</body>

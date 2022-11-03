@@ -1,0 +1,44 @@
+<!<!DOCTYPE html>
+<head>
+  <% content_for :title, "All Customers" %>
+</head>
+<body>
+  <br>
+  <h1>View Customers</h1>
+  <hr>
+  <br>
+  <% if @customers.empty? %>
+  <h2>Sorry! There are currently no customers in the system!</h2>
+  <br>
+  <p>Add a customer <%= link_to 'here', new_customer_path %></p>
+  <% else %>
+  <div style="height: 80%; width: 100%; overflow: scroll">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Customer Number</th>
+          <th>Forename</th>
+          <th>Surname</th>
+          <th>Date of Birth</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @customers.each do |customer| %>
+        <tr>
+          <td><%= customer.customerNumber %></td>
+          <td><%= customer.forename %></td>
+          <td><%= customer.surname %></td>
+          <td><%= customer.dob %></td>
+          <td>
+            <%=  link_to 'Accounts', account_path(customer), class: "btn btn-primary btn-block", style: "height:100%; margin: 1%"%>
+            <%= link_to 'Edit', edit_customer_path(customer), class: "btn btn-primary btn-block", style: "height:100%; margin: 1%" %>
+            <%=  link_to 'Delete', customer_path(customer), method: 'delete', class: "btn btn-primary btn-block", style: "height:100%; margin: 1%"%>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% end %>
+</body>

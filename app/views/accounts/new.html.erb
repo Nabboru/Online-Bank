@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% content_for :title, "New Account" %>
+</head>
+<body>
+  <br>
+  <h1>Add New Account</h1>
+  <hr>
+  <div class="container">
+    <%= bootstrap_form_for(@account, :method => 'post') do |f| %>
+      <%= render(:partial => 'form', :locals => {:f => f}) %>
+      <%= f.submit "Create Account", class: 'btn btn-lg btn-primary btn-block' %>
+    <% end %>
+  </div>
+</body>
+</html>

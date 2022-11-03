@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <% content_for :title, "New Customer" %>
+  </head>
+  <body>
+    <br>
+    <h1>Add New Customer</h1>
+    <hr>
+    <div>
+        <%=  bootstrap_form_for(@customer, :method => 'post') do |f| %>
+          <%= f.text_field :customerNumber, :readonly => true, label: "Customer Number" %>
+          <%= render(:partial => 'form', :locals => {:f => f}) %>
+          <%= f.submit "Create Customer", class: 'btn btn-lg btn-primary btn-block' %>
+        <% end %>
+    </div>
+  </body>

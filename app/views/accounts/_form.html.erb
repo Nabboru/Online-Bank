@@ -1,0 +1,5 @@
+<%= f.text_field :customer_id, class: "form-control", label: "Customer Number" %>
+<%= f.text_field :accountNumber, :readonly => true, class: "form-control", label: "Account Number" %>
+<%= f.text_field :accountName, class: "form-control", label: "Account Name" %>
+<%= f.text_field :balance, :readonly => true, class: "form-control", label: "Balance" %>
+<%= f.select :currency, [['EUR', 'EUR'],['GBP', 'GBP'],['USD', 'USD']], class:"form-control", label: ""%>

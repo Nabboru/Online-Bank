@@ -1,0 +1,19 @@
+// Place all the styles related to the Customers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+html,
+body {
+  height: 100%;
+}
+
+.form-customer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 100px;
+  margin: auto;
+}

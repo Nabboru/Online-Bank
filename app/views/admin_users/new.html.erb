@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+  <% content_for :title, "New Account" %>
+</head>
+<body>
+  <br>
+  <h1>Add New Administrator</h1>
+  <hr>
+  <%= bootstrap_form_for @admin, url: admin_users_path, method: 'post', class: "form" do |f| %>
+    <%= f.text_field :email %>
+    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.button "Create Administrator", class: 'btn btn-lg btn-primary btn-block' %>
+  <% end %>
+</body>
